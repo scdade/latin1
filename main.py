@@ -1,6 +1,5 @@
-from itertools import permutations
 from time import sleep
-from random import randint,seed
+from random import randint,seed,shuffle
 from wörterbuch import worte
 seed()
 
@@ -11,9 +10,9 @@ print("Salve",name)
 anzahlWorte = len(worte)
 print("In unserem Wörterbuch sind %d Wörter"%anzahlWorte)
 
-#nochmal nachdenken....
-gemischteWortliste = list(permutations(worte))
-unserTest = gemischteWortliste[randint(0,len(gemischteWortliste)-1)]
+unserTest = list(worte)
+shuffle(unserTest)
+
 
 richtig = 0
 falsch = 0
@@ -27,11 +26,12 @@ for [latein,deutsch] in unserTest:
         print("Was heisst >%s< auf lateinisch?"%deutsch)
     antwort = input("")
 
-    if(antwort==übersetzung):
+    if(antwort.lower()==übersetzung.lower()):
         print("Deine Antwort >%s< war richtig!"%antwort)
         richtig = richtig +1
     else:
-        print("Total falsch!")
+        print("Total falsch! Richtig wäre %s gewesen"%übersetzung)
         falsch = falsch +1
         sleep(3)
+
 print("%d von %d Worten waren falsch beantwortet!"%(falsch, len(unserTest)))

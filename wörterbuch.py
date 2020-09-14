@@ -1,6 +1,8 @@
 worte=[
     ["salve","Hallo"],
-    ["Magistra","Lehrer"],
-    ["Pater","Vater"],
-    ["Mater","Mutter"]
+    ["magistra","Lehrer"],
+    ["pater","Vater"],
+    ["mater","Mutter"],
+    ["servus","Sklave"],
+    ["serva","Sklavin"]
 ]
